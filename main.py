@@ -1,4 +1,3 @@
-
 from data import build_corpus
 from utils import extend_maps, prepocess_data_for_lstmcrf
 from evaluate import hmm_train_eval, crf_train_eval, \
@@ -13,6 +12,8 @@ def main():
     train_word_lists, train_tag_lists, word2id, tag2id = build_corpus("train")
     dev_word_lists, dev_tag_lists = build_corpus("dev", make_vocab=False)
     test_word_lists, test_tag_lists = build_corpus("test", make_vocab=False)
+
+    # print("test_word_lists = ", test_word_lists, "test_tag_lists = ", test_tag_lists)
 
     # 训练评估ｈｍｍ模型
     print("正在训练评估HMM模型...")
